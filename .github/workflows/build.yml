@@ -36,7 +36,9 @@ jobs:
       - name: Generar iconos
         run: |
           mkdir -p assets
-          cp MIBUNKER/icono/icono-1024.png assets/icon-only.png
+          ICON=$(find . -name "icono-1024.png" -not -path "./node_modules/*" -not -path "./android/*" | head -n 1)
+          echo "Icono encontrado: $ICON"
+          cp "$ICON" assets/icon-only.png
           npx @capacitor/assets generate --android --iconBackgroundColor '#0b1220' --iconBackgroundColorDark '#0b1220'
 
       - name: Sincronizar
