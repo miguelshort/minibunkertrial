@@ -36,7 +36,7 @@ jobs:
       - name: Generar iconos
         run: |
           mkdir -p assets
-          cp icono/icono-1024.png assets/icon-only.png
+          cp MIBUNKER/icono/icono-1024.png assets/icon-only.png
           npx @capacitor/assets generate --android --iconBackgroundColor '#0b1220' --iconBackgroundColorDark '#0b1220'
 
       - name: Sincronizar
